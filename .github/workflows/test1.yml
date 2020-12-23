@@ -7,7 +7,7 @@ on:
 jobs:
   check-labels:
     runs-on: ubuntu-latest
-    if: github.event.issue.body.indexOf('ant-design-issue-helper') === -1
+    if: contains(github.event.issue.body, 'ant-design-issue-helper') === false
     steps:
       - name: test
         uses: actions-cool/issue-helper@main

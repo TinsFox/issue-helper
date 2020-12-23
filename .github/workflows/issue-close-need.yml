@@ -1,0 +1,17 @@
+name: close need issues
+
+on:
+  schedule:
+    - cron: "0 10 * * *"
+
+jobs:
+  close-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: close-issues
+        uses: actions-cool/issue-helper@main
+        with:
+          actions: 'close-issues'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          labels: '🤔 Need Reproduce'
+          inactive-day: 1

@@ -2,7 +2,7 @@ name: close need issues
 
 on:
   schedule:
-    - cron: "0 10 * * *"
+    - cron: "0 0 * * *"
 
 jobs:
   close-issues:
@@ -14,4 +14,4 @@ jobs:
           actions: 'close-issues'
           token: ${{ secrets.GITHUB_TOKEN }}
           labels: '🤔 Need Reproduce'
-          inactive-day: 1
+          inactive-day: 0.4

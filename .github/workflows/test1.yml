@@ -2,7 +2,7 @@ name: Issue Check Invalid
 
 on:
   issues:
-    types: [opened]
+    types: [opened,labeled]
 
 jobs:
   check-labels:

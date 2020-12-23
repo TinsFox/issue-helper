@@ -1,6 +1,8 @@
 name: close help
 
 on:
+  push:
+     branches: main
   schedule:
     - cron: "* * * * *"
 

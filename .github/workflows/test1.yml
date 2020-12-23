@@ -12,7 +12,7 @@ jobs:
       - name: test
         uses: actions-cool/issue-helper@main
         with:
-          actions: ['create-comment', 'add-labels', 'close-issue']
+          actions: 'create-comment,add-labels,close-issue'
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           labels: 'Invalid'

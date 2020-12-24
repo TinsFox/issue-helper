@@ -16,7 +16,9 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           title-includes: '官网,网站,国内,镜像,mobile ant design,mobile.ant.design,ant design,ant.design,pro/挂了,无法访问,不能访问,访问不了,出问题,打不开,登不上,can not open,can not be reached'
+
       - name: deal-website
+        if: ${{ steps.createissue.outputs.check-result }} == true
         uses: actions-cool/issues-helper@main
         with:
           actions: 'create-comment,close-issue'

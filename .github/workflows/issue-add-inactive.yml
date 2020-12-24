@@ -1,0 +1,15 @@
+name: Issue Add Inactive
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  close-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: close-issues
+        uses: actions-cool/issues-helper@v1
+        with:
+          actions: 'check-inactive'
+          inactive-day: 0.5

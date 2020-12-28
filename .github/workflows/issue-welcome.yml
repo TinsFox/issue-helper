@@ -13,6 +13,6 @@ jobs:
         with:
           actions: 'welcome'
           body: hi @${{ github.event.issue.user.login }}, welcome!
-          labels: 'bug'
+          labels: 'welcome1, welcome2'
           assignees: 'xrkffgg'
           issue-contents: '+1, -1, eyes'

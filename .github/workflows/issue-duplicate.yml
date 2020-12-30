@@ -2,18 +2,16 @@ name: Issue Mark Duplicate
 
 on:
   issue_comment:
-    types: [created, edited]
+    types: [created]
 
 jobs:
   mark-duplicate:
     runs-on: ubuntu-latest
     steps:
       - name: mark-duplicate
-        uses: actions-cool/issues-helper@v1.5
+        uses: actions-cool/issues-helper@perf
         with:
-          actions: 'mark-duplicate,close-issue'
+          actions: 'mark-duplicate'
           token: ${{ secrets.GH }}
-          duplicate-command: '/s'
-          issue-number: ${{ github.context.payload.issue.number }}
-          duplicate-labels: 'x21,x22'
+          duplicate-labels: 'x221,x222'
           contents: '+1, -1'

@@ -14,3 +14,4 @@ jobs:
           actions: 'mark-duplicate'
           token: ${{ secrets.GITHUB_TOKEN }}
           labels: 'x1,x2'
+          contents: '+1, -1'

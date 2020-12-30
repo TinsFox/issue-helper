@@ -12,6 +12,6 @@ jobs:
         uses: actions-cool/issues-helper@add-duplicate
         with:
           actions: 'mark-duplicate'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH }}
           labels: 'x1,x2'
           contents: '+1, -1'

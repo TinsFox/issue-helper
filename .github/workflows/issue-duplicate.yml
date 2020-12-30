@@ -13,5 +13,6 @@ jobs:
         with:
           actions: 'mark-duplicate'
           token: ${{ secrets.GH }}
-          labels: 'x1,x2'
+          duplicate-command: '/s'
+          duplicate-labels: 'x21,x22'
           contents: '+1, -1'

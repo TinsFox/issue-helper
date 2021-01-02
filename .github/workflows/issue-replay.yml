@@ -35,6 +35,4 @@ jobs:
         if: github.event.label.name == 'cc'
         uses: actions-cool/issues-helper@mon
         with:
-          actions: 'close-issues'
-          body: 'ccc'
-          contents: '+1'
+          actions: 'month-statistics'

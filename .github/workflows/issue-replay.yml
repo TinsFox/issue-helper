@@ -33,7 +33,7 @@ jobs:
       
       - name: need repo
         if: github.event.label.name == 'cc'
-        uses: actions-cool/issues-helper@mon
+        uses: actions-cool/issues-helper@main
         with:
           actions: 'close-issues'
           body: 'ccc'

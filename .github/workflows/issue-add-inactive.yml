@@ -1,15 +1,15 @@
 name: Issue Add Inactive
 
 on:
-  schedule:
-    - cron: "0 2 * * *"
+  issues:
+    types: [labeled]
 
 jobs:
   close-issues:
     runs-on: ubuntu-latest
     steps:
       - name: close-issues
-        uses: actions-cool/issues-helper@v1
+        if: github.event.label.name == 'check-inactive'
+        uses: actions-cool/issues-helper@up
         with:
           actions: 'check-inactive'
-          inactive-day: 0.5

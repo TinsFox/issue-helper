@@ -2,7 +2,7 @@ name: Issue Remove Labels
 
 on:
   issues:
-    types: [edited, reopened]
+    types: [edited, reopened, labeled]
   issue_comment:
     types: [created, edited]
 

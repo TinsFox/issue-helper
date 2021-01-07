@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: mark-duplicate
-        uses: actions-cool/issues-helper@@v1.7
+        uses: actions-cool/issues-helper@v1.7
         with:
           actions: 'mark-duplicate'
-          duplicate-command: '/d'
-          issue-number: ${{ github.event.issue.number }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           duplicate-labels: 'duplicate'
+          close-issue: true

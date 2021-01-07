@@ -13,3 +13,5 @@ jobs:
         uses: actions-cool/issues-helper@up
         with:
           actions: 'check-inactive'
+          body: 'add inactive'
+          contents: '+1'

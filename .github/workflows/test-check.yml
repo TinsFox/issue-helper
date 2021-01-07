@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check-issue
-        uses: actions-cool/issues-helper@up
+        uses: actions-cool/issues-helper@v1.2
         id: checkid
         with:
           actions: 'check-issue'
@@ -19,7 +19,7 @@ jobs:
 
       - name: deal-website
         if: steps.checkid.outputs.check-result == 'true'
-        uses: actions-cool/issues-helper@up
+        uses: actions-cool/issues-helper@v1.2
         with:
           actions: 'create-comment,close-issue'
           token: ${{ secrets.GITHUB_TOKEN }}

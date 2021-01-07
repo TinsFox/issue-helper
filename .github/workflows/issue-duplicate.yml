@@ -12,6 +12,6 @@ jobs:
         uses: actions-cool/issues-helper@v1.7
         with:
           actions: 'mark-duplicate'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH }}
           duplicate-labels: 'duplicate'
           close-issue: true

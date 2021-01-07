@@ -39,3 +39,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           labels: 'x1,x2'
+
+      - name: remove labels
+        if: github.event.label.name == 'duplicate'
+        uses: actions-cool/issues-helper@up
+        with:
+          actions: 'remove-labels'
+          token: ${{ secrets.GH }}
+          issue-number: ${{ github.event.issue.number }}
+          labels: 'x1,x2'

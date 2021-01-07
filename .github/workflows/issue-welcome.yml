@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: welcome
-        uses: actions-cool/issues-helper@mon
+        uses: actions-cool/issues-helper@up
         with:
           actions: 'welcome'
           body: hi @${{ github.event.issue.user.login }}, welcome!

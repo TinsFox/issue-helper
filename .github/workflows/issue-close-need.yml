@@ -1,17 +1,17 @@
 name: close need issues
 
 on:
-  schedule:
-    - cron: "0 0 * * *"
+  issues:
+    types: [labeled]
 
 jobs:
   close-issues:
     runs-on: ubuntu-latest
     steps:
       - name: close-issues
-        uses: actions-cool/issues-helper@v1
+        if: github.event.label.name == 'close-issues'
+        uses: actions-cool/issues-helper@up
         with:
           actions: 'close-issues'
           token: ${{ secrets.GITHUB_TOKEN }}
           labels: '🤔 Need Reproduce'
-          inactive-day: 0.4

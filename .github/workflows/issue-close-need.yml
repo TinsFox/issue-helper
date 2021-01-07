@@ -15,3 +15,5 @@ jobs:
           actions: 'close-issues'
           token: ${{ secrets.GITHUB_TOKEN }}
           labels: '🤔 Need Reproduce'
+          body: 'close issues'
+          contents: '+1'

@@ -9,11 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: mark-duplicate
-        uses: actions-cool/issues-helper@perf
+        uses: actions-cool/issues-helper@@v1.7
         with:
           actions: 'mark-duplicate'
-          token: ${{ secrets.GH }}
           duplicate-command: '/d'
-          duplicate-labels: 'x221,x222'
-          contents: '+1, -1'
-          close-issue: 'true'
+          duplicate-labels: 'duplicate'

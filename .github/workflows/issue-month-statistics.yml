@@ -1,15 +1,16 @@
 name: Issue Month Statistics
 
 on:
-  schedule:
-    - cron: "0 1 1 * *"
+  issues:
+    types: [labeled]
 
 jobs:
   month-statistics:
     runs-on: ubuntu-latest
     steps:
       - name: month-statistics
-        uses: actions-cool/issues-helper@v1.7
+        if: github.event.label.name == 'month-statistics'
+        uses: actions-cool/issues-helper@up
         with:
           actions: 'month-statistics'
           token: ${{ secrets.GITHUB_TOKEN }}

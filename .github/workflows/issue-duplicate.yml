@@ -13,4 +13,5 @@ jobs:
         with:
           actions: 'mark-duplicate'
           duplicate-command: '/d'
+          issue-number: ${{ github.event.issue.number }}
           duplicate-labels: 'duplicate'

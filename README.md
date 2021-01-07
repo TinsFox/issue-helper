@@ -44,6 +44,10 @@
 - 是否回复
 - 是否增加 emoji
 
+## 更新 `incative` issue
+
+- 查看是否会移除 `incative` label
+
 ## 测试 label `close-issues`
 
 - 是否可以把 `🤔 Need Reproduce` 的 issue 关闭

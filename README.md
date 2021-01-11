@@ -7,7 +7,7 @@
 
 - 加 emoji
 - comment 回复
-- assigned 
+- assigned
 - label `welcome1` `welcome2`
 - 删除该 issue，确保下次可测试
 
@@ -16,10 +16,15 @@
 - 查看是否触发校验
 - 回复评论
 - 关闭 issue
+- 是否随机1人
 
 ## 测试 label `help wanted` `🤔 Need Reproduce`
 
 - 查看是否可以回复
+
+## 测试 label `add-assignees-1` `add-assignees-2`
+
+- 是否随机指定正常
 
 ## 测试 issus `mark-duplicate`
 

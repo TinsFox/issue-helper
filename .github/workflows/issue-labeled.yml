@@ -53,7 +53,7 @@ jobs:
         if: github.event.label.name == 'add-assignees-1'
         uses: actions-cool/issues-helper@up
         with:
-          actions: 'add-assignees-1'
+          actions: 'add-assignees'
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           assignees: 'xrkffgg,zoo-js-bot,HuaRin'
@@ -63,7 +63,7 @@ jobs:
         if: github.event.label.name == 'add-assignees-2'
         uses: actions-cool/issues-helper@up
         with:
-          actions: 'add-assignees-1'
+          actions: 'add-assignees'
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           assignees: 'xrkffgg,zoo-js-bot,HuaRin'

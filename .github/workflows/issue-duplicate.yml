@@ -13,6 +13,5 @@ jobs:
         with:
           actions: 'mark-duplicate'
           duplicate-labels: 'duplicate'
-          token: ${{ secrets.GH }}
           remove-labels: 'status: needs triage,status: needs triage2'
           close-issue: true

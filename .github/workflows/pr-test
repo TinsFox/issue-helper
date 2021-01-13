@@ -1,0 +1,12 @@
+name: pr test
+
+on:
+  pull_request:
+    types: [edited]
+
+jobs:
+  reply-help:
+    runs-on: ubuntu-latest
+    steps:
+      - name: help wanted
+        run: "echo 1234"

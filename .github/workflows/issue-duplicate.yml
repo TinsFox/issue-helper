@@ -15,3 +15,14 @@ jobs:
           duplicate-labels: 'duplicate'
           remove-labels: 'status: needs triage,status: needs triage2'
           close-issue: true
+
+  mark-duplicate1x:
+    runs-on: ubuntu-latest
+    steps:
+      - name: mark-duplicate
+        uses: actions-cool/issues-helper@1.x
+        with:
+          actions: 'mark-duplicate'
+          duplicate-labels: 'duplicate'
+          remove-labels: 'status: needs triage,status: needs triage2'
+          close-issue: true

@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "@actions/github": "^4.0.0",
+    "@octokit/rest": "^18.0.12",
+    "axios": "^0.21.1"
+  }
+}

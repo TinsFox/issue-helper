@@ -4,14 +4,13 @@ on:
   create
 
 jobs:
-  make-release:
+  release-helper:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: install
-        run: yarn
-
-      - name: node js
-        run: node ./script/make-release.js
-        env:
-          GH_TOKEN: ${{ secrets.GH }}
+      - name: make release
+        uses: actions-cool/release-helper@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          triger: 'tag'
+          changelogs: 'CHANGELOG.en-US.md, CHANGELOG.zh-CN.md'
+          branches: 'main'

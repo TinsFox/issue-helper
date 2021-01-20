@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: make release
-        uses: actions-cool/release-helper@main
+        uses: actions-cool/release-helper@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           triger: 'tag'

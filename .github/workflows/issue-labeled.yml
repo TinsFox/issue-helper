@@ -76,3 +76,4 @@ jobs:
           actions: 'lock-issue'
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
+          lock-reason: 'too heated'

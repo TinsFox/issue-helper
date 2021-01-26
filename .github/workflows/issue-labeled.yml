@@ -68,3 +68,11 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           assignees: 'xrkffgg,zoo-js-bot,HuaRin'
           random-to: 2
+          
+      - name: lock
+        if: github.event.label.name == 'lock-issue'
+        uses: actions-cool/issues-helper@up
+        with:
+          actions: 'lock-issue'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.issue.number }}

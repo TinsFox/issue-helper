@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: help wanted
         if: github.event.label.name == 'help wanted' || github.event.label.name == 'bug：help wanted'
-        uses: actions-cool/issues-helper@main
+        uses: actions-cool/issues-helper@v2.0.0
         with:
           actions: 'create-comment'
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -22,7 +22,7 @@ jobs:
 
       - name: need repo
         if: github.event.label.name == '🤔 Need Reproduce'
-        uses: actions-cool/issues-helper@up
+        uses: actions-cool/issues-helper@v2.0.0
         with:
           actions: 'create-comment'
           issue-number: ${{ github.event.issue.number }}
@@ -33,7 +33,7 @@ jobs:
 
       - name: remove labels
         if: github.event.label.name == 'remove-labels'
-        uses: actions-cool/issues-helper@up
+        uses: actions-cool/issues-helper@v2.0.0
         with:
           actions: 'remove-labels'
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -42,7 +42,7 @@ jobs:
 
       - name: duplicate
         if: github.event.label.name == 'duplicate'
-        uses: actions-cool/issues-helper@up
+        uses: actions-cool/issues-helper@v2.0.0
         with:
           actions: 'remove-labels'
           token: ${{ secrets.GH }}
@@ -51,7 +51,7 @@ jobs:
           
       - name: add-assignees-1
         if: github.event.label.name == 'add-assignees-1'
-        uses: actions-cool/issues-helper@up
+        uses: actions-cool/issues-helper@v2.0.0
         with:
           actions: 'add-assignees'
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -61,7 +61,7 @@ jobs:
           
       - name: add-assignees-2
         if: github.event.label.name == 'add-assignees-2'
-        uses: actions-cool/issues-helper@up
+        uses: actions-cool/issues-helper@v2.0.0
         with:
           actions: 'add-assignees'
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -71,7 +71,7 @@ jobs:
           
       - name: lock
         if: github.event.label.name == 'lock-issue'
-        uses: actions-cool/issues-helper@up
+        uses: actions-cool/issues-helper@v2.0.0
         with:
           actions: 'lock-issue'
           token: ${{ secrets.GITHUB_TOKEN }}

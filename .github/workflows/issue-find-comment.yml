@@ -17,11 +17,11 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           body-includes: '<!-- AUTO_PREVIEW_HOOK -->'
 
-      - run: echo random-number ${{ steps.fcid.outputs.comments }}
+      - run: echo random-number ${{ steps.fcid.outputs.comments.length }}
         shell: bash
 
       - name: create comment
-        if: ${{ steps.fcid.outputs.comments.length == 0 }}
+        if: ${{ steps.fcid.outputs.comments.length == '0' }}
         uses: actions-cool/issues-helper@v2.1.1
         with:
           actions: 'create-comment'
@@ -30,7 +30,7 @@ jobs:
           body: '<!-- AUTO_PREVIEW_HOOK --> err'
 
       - name: update comment
-        if: ${{ steps.fcid.outputs.comments.length == 1 }}
+        if: ${{ steps.fcid.outputs.comments.length == '1' }}
         uses: actions-cool/issues-helper@v2.1.1
         with:
           actions: 'update-comment'

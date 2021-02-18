@@ -1,0 +1,39 @@
+name: Test
+
+on:
+  isssue:
+    types: [edited]
+
+jobs:
+  do-test:
+    runs-on: ubuntu-latest
+    if: github.event.label.name == 'watch'
+    steps:
+      - name: find comments
+        uses: actions-cool/issues-helper@v2.1.1
+        id: fcid
+        with:
+          actions: 'find-comments'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.issue.number }}
+          comment-auth: k
+          body-includes: 'error'
+
+      - name: create comment
+        if: ${{ steps.fcid.outputs.comments.length == 0 }}
+        uses: actions-cool/issues-helper@v2.1.1
+        with:
+          actions: 'create-comment'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.issue.number }}
+          body: 'Some error!'
+
+      - name: update comment
+        if: ${{ steps.fcid.outputs.comments.length == 1 }}
+        uses: actions-cool/issues-helper@v2.1.1
+        with:
+          actions: 'update-comment'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          comment-id: ${{ steps.fcid.outputs.comments[0].id }}
+          body: 'Some error again!'
+          update-mode: 'append'

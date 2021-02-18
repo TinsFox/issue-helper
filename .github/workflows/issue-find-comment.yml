@@ -17,6 +17,9 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           body-includes: '<!-- AUTO_PREVIEW_HOOK -->'
 
+      - run: echo random-number ${{ steps.fcid.outputs.comments }}
+        shell: bash
+
       - name: create comment
         if: ${{ steps.fcid.outputs.comments.length == 0 }}
         uses: actions-cool/issues-helper@v2.1.1

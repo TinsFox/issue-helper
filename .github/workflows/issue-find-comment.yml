@@ -1,7 +1,7 @@
 name: Test
 
 on:
-  isssue:
+  issues:
     types: [edited]
 
 jobs:
@@ -16,8 +16,7 @@ jobs:
           actions: 'find-comments'
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
-          comment-auth: k
-          body-includes: 'error'
+          body-includes: '<!-- AUTO_PREVIEW_HOOK -->'
 
       - name: create comment
         if: ${{ steps.fcid.outputs.comments.length == 0 }}
@@ -26,7 +25,7 @@ jobs:
           actions: 'create-comment'
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
-          body: 'Some error!'
+          body: '<!-- AUTO_PREVIEW_HOOK --> err'
 
       - name: update comment
         if: ${{ steps.fcid.outputs.comments.length == 1 }}
@@ -35,5 +34,5 @@ jobs:
           actions: 'update-comment'
           token: ${{ secrets.GITHUB_TOKEN }}
           comment-id: ${{ steps.fcid.outputs.comments[0].id }}
-          body: 'Some error again!'
+          body: '<!-- AUTO_PREVIEW_HOOK --> Some error again!'
           update-mode: 'append'

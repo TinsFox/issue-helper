@@ -35,6 +35,6 @@ jobs:
         with:
           actions: 'update-comment'
           token: ${{ secrets.GITHUB_TOKEN }}
-          comment-id: ${{ steps.fcid.outputs.comments[0].id }}
+          comment-id: ${{ JSON.parse(steps.fcid.outputs.comments)[0].id }}
           body: '<!-- AUTO_PREVIEW_HOOK --> Some error again!'
           update-mode: 'append'

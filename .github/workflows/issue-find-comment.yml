@@ -21,7 +21,7 @@ jobs:
         shell: bash
 
       - name: create comment
-        if: steps.fcid.outputs.comments[0].id == false
+        if: contains(steps.fcid.outputs.comments[0].body, '<!-- AUTO_PREVIEW_HOOK -->') == false
         uses: actions-cool/issues-helper@v2.1.1
         with:
           actions: 'create-comment'
@@ -30,7 +30,7 @@ jobs:
           body: '<!-- AUTO_PREVIEW_HOOK --> err'
 
       - name: update comment
-        if: steps.fcid.outputs.comments[0].id == true
+        if: contains(steps.fcid.outputs.comments[0].body, '<!-- AUTO_PREVIEW_HOOK -->') == true
         uses: actions-cool/issues-helper@v2.1.1
         with:
           actions: 'update-comment'

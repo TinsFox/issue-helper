@@ -1,0 +1,20 @@
+name: PR Labeled
+
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  pr-labeled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: help wanted
+        if: github.event.label.name == 'help wanted'
+        uses: actions-cool/issues-helper@main
+        with:
+          actions: 'create-comment'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.number }}
+          comment-emoji: '+1, -1'
+          body: |
+            Hello @${{ github.event.issue.user.login }}. We totally like 

@@ -15,6 +15,5 @@ jobs:
           actions: 'create-comment'
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.number }}
-          comment-emoji: '+1, -1'
           body: |
             Hello @${{ github.event.issue.user.login }}. We totally like 

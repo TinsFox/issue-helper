@@ -27,4 +27,5 @@ jobs:
       - uses: actions-cool/issues-helper@up
         with:
           actions: 'check-issue'
+          issue-number: ${{ github.event.issue.number }}
           title-remove: '🐛[BUG], 👑 [需求]'

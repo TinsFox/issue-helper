@@ -2,7 +2,7 @@ name: Issue Open
 
 on:
   issues:
-    types: [opened]
+    types: [opened, reopened]
 
 jobs:
   check-helper:

@@ -12,3 +12,5 @@ jobs:
         uses: actions-cool/issues-similarity-analysis@main
         with:
           filter-threshold: 0.5
+          comment-title: '### 希望下面可以帮助到你'
+          comment-body: '${index}. #{number} ${similarity}'

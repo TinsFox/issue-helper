@@ -44,6 +44,5 @@ jobs:
         with:
           filter-threshold: 0.5
           title-excludes: '🐛[BUG], 👑 [需求]'
-          show-footer: false
           comment-title: '### See'
           comment-body: '${index}. ${similarity} #${number}'

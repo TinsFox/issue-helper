@@ -13,4 +13,4 @@ jobs:
         with:
           filter-threshold: 0.5
           comment-title: '### 希望下面可以帮助到你'
-          comment-body: '${index}. ${similarity} #{number} '
+          comment-body: '${index}. ${similarity} #${number} '

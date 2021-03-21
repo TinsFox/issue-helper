@@ -46,3 +46,5 @@ jobs:
           title-excludes: '🐛[BUG], 👑 [需求]'
           comment-title: '### See'
           comment-body: '${index}. ${similarity} #${number}'
+          show-footer: false
+

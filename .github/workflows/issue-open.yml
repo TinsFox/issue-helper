@@ -2,7 +2,7 @@ name: Issue Open
 
 on:
   issues:
-    types: [opened, reopened]
+    types: [opened, reopened, edited]
 
 jobs:
   check-helper:
@@ -24,8 +24,27 @@ jobs:
   check-issue:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions-cool/issues-helper@up
+      - uses: actions-cool/issues-helper@v2.2.0
+        id: check
         with:
           actions: 'check-issue'
           issue-number: ${{ github.event.issue.number }}
-          title-remove: '🐛[BUG], 👑 [需求]'
+          title-excludes: '🐛[BUG], 👑 [需求]'
+  
+      - run: echo check ${{ steps.check.outputs.check-result }}
+      
+      - if: steps.check.outputs.check-result == 'false'
+        uses: actions-cool/issues-helper@v2.2.0
+        with:
+          actions: 'close-issue'
+          issue-number: ${{ github.event.issue.number }}
+      
+      - if: steps.check.outputs.check-result == 'true'
+        uses: actions-cool/issues-similarity-analysis@main
+        with:
+          filter-threshold: 0.5
+          title-excludes: '🐛[BUG], 👑 [需求]'
+          comment-title: '### See'
+          comment-body: '${index}. ${similarity} #${number}'
+          show-footer: false
+

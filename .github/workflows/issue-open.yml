@@ -46,3 +46,9 @@ jobs:
           title-excludes: '🐛[BUG], 👑 [需求]'
           comment-title: '### See'
           comment-body: '${index}. ${similarity} #${number}'
+      
+      - if: github.event.action == 'opened'
+        run: echo "opened1"
+        
+      - if: github.event.action == 'edited'
+        run: echo "edited2"

@@ -1,0 +1,12 @@
+name: Release Helper
+
+on:
+  create
+
+jobs:
+  release-helper:
+    runs-on: ubuntu-latest
+    steps:
+      - name: make release
+        if: github.event.ref_type == 'tag'
+        run: echo ${{ github.event.ref }}

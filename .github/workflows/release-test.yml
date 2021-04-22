@@ -16,4 +16,4 @@ jobs:
           branch: 'master'
           dingding-token: 123
           dingding-msg: 'CHANGELOG.zh-CN.md'
-          dingding-ignore: '-, a, b, A, B'
+          prerelease-filter: '-, a, b, A, B'

@@ -1,0 +1,15 @@
+name: Test PR Closed
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - if: github.event.pull_request.merged == true
+        run: "echo merge"
+        
+      - if: github.event.pull_request.merged == false
+        run: "echo closed"

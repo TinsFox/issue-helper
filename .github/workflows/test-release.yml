@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: make release
-        if: github.event.ref_type == 'tag' && && (contains(github.event.ref, '-') == false)
+        if: github.event.ref_type == 'tag' && (contains(github.event.ref, '-') == false)
         run: echo 'ignore'

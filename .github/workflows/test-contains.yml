@@ -1,4 +1,4 @@
-name: Verify Package Version
+name: Test Contains
 
 on:
   pull_request:
@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     if: contains(github.event.pull_request.title, 'changelog') || contains(github.event.pull_request.title, ' release ')
     steps:
-      run: echo 'in'
+      - run: echo 'in'

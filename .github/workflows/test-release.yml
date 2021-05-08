@@ -6,7 +6,7 @@ on:
 jobs:
   release-helper:
     runs-on: ubuntu-latest
+    if: github.event.ref_type == 'tag' && (contains(github.event.ref, '-') == false)
     steps:
       - name: make release
-        if: github.event.ref_type == 'tag' && (contains(github.event.ref, '-') == false)
-        run: echo 'ignore'
+        run: echo '123'

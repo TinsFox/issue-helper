@@ -1,0 +1,16 @@
+name: Test PRT
+
+on:
+  pull_request_target
+
+jobs:
+  pr-labeled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: help wanted
+        uses: actions-cool/issues-helper@v2.2.1
+        with:
+          actions: 'create-comment'
+          issue-number: ${{ github.event.number }}
+          body: |
+            Hello @${{ github.event.pull_request.user.login }}. We totally like

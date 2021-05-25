@@ -6,6 +6,7 @@ on:
 jobs:
   pr-labeled:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.head.ref == 'feature' || github.event.pull_request.head.ref == 'master'
     steps:
       - name: help wanted
         uses: actions-cool/issues-helper@v2.2.1

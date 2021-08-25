@@ -9,4 +9,13 @@ jobs:
     if: github.event.ref_type == 'tag' && (contains(github.event.ref, '-') == false)
     steps:
       - name: make release
-        run: echo '123'
+        if: github.event.ref_type == 'tag'
+        uses: actions-cool/release-helper@up
+        with:
+          triger: 'tag'
+          changelogs: 'CHANGELOG.en-US.md, CHANGELOG.zh-CN.md'
+          branch: 'main'
+          dingding-token: ${{ secrets.DINGDING_BOT_TOKEN }}
+          dingding-msg: 'CHANGELOG.zh-CN.md'
+          prettier: true
+          prerelease-filter: '-, a, b, A, B'

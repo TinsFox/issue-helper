@@ -17,5 +17,9 @@ jobs:
           branch: 'main'
           dingding-token: ${{ secrets.DINGDING_BOT_TOKEN }}
           dingding-msg: 'CHANGELOG.zh-CN.md'
+          msg-title: '# {{v}} 发布啦'
+          msg-head: 'msg head'
+          msg-poster: 'https://avatars.githubusercontent.com/u/507615?s=88&u=63a8ef8e8876c4c1fad07a7737684f5281fedaaa&v=4'
+          msg-footer: '> [url]{{url}} 看详情'
           prettier: '😅, 😪'
           prerelease-filter: '-, a, b, A, B'

@@ -41,6 +41,10 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           labels: 'x1,x2'
 
+      - name: remove labels
+        if: github.event.label.name == 'test-github'
+        uses: actions-cool/test-ci@main
+
       - name: duplicate
         if: github.event.label.name == 'duplicate'
         uses: actions-cool/issues-helper@up

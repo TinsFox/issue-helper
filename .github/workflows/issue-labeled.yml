@@ -44,6 +44,10 @@ jobs:
       - name: remove labels
         if: github.event.label.name == 'test-github'
         uses: actions-cool/test-ci@main
+        
+      - name: remove labels
+        if: github.event.label.name == 'test-github'
+        uses: actions-cool/check-user-permission@main
 
       - name: duplicate
         if: github.event.label.name == 'duplicate'

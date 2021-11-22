@@ -1,6 +1,6 @@
 # Test Actions
 
-## Issues Helper
+## Issues
 
 ### 新开 issue 检查是否触发 welcome
 

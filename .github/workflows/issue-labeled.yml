@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: help wanted
         if: github.event.label.name == 'help wanted' || github.event.label.name == 'bug：help wanted'
-        uses: actions/checkout@master
+        uses: actions-cool/issues-helper@v2
         with:
           actions: "create-comment"
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -23,7 +23,7 @@ jobs:
 
       - name: need repo
         if: github.event.label.name == '🤔 Need Reproduce'
-        uses: actions/checkout@master
+        uses: actions-cool/issues-helper@v2
         with:
           actions: "create-comment"
           issue-number: ${{ github.event.issue.number }}
@@ -40,55 +40,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           labels: "x1,x2"
-
-      - name: remove labels
-        if: github.event.label.name == 'test-github'
-        uses: actions-cool/test-ci@main
-
-      - name: remove labels
-        if: github.event.label.name == 'test-github'
-        uses: actions-cool/check-user-permission@main
-        with:
-          username: ${{ github.event.issue.user.login }}
-          check-bot: true
-          require: "write"
-
-      - name: duplicate
-        if: github.event.label.name == 'duplicate'
-        uses: actions/checkout@master
-        with:
-          actions: "remove-labels"
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: ${{ github.event.issue.number }}
-          comment-emoji: "+1, -1"
-          labels: "x1,x2"
-
-      - name: add-assignees-1
-        if: github.event.label.name == 'add-assignees-1'
-        uses: actions/checkout@master
-        with:
-          actions: "add-assignees"
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: ${{ github.event.issue.number }}
-          assignees: "xrkffgg,zoo-js-bot,HuaRin"
-          random-to: 1
-
-      - name: add-assignees-2
-        if: github.event.label.name == 'add-assignees-2'
-        uses: actions/checkout@master
-        with:
-          actions: "add-assignees"
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: ${{ github.event.issue.number }}
-          assignees: "xrkffgg,zoo-js-bot,HuaRin"
-          random-to: 2
-
-      - name: lock
-        if: github.event.label.name == 'lock-issue'
-        uses: actions/checkout@master
-        with:
-          actions: "lock-issue"
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: ${{ github.event.issue.number }}
-          issue-emoji: "+1, -1"
-          lock-reason: "too heated"

@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: welcome
-        uses: actions-cool/issues-helper@up
+        uses: actions/checkout@master
         with:
-          actions: 'welcome'
+          actions: "welcome"
           body: hi @${{ github.event.issue.user.login }}, welcome!
-          labels: 'welcome1, welcome2'
-          assignees: 'xrkffgg'
-          issue-emojis: '+1, -1, eyes'
+          labels: "welcome1, welcome2"
+          assignees: "xrkffgg"
+          issue-emojis: "+1, -1, eyes"

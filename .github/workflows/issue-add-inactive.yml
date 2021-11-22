@@ -10,8 +10,8 @@ jobs:
     steps:
       - name: close-issues
         if: github.event.label.name == 'check-inactive'
-        uses: actions-cool/issues-helper@up
+        uses: actions/checkout@master
         with:
-          actions: 'check-inactive'
-          body: 'add inactive'
-          contents: '+1'
+          actions: "check-inactive"
+          body: "add inactive"
+          contents: "+1"

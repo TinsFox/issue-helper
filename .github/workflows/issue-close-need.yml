@@ -10,11 +10,11 @@ jobs:
     steps:
       - name: close-issues
         if: github.event.label.name == 'close-issues'
-        uses: actions-cool/issues-helper@up
+        uses: actions/checkout@master
         with:
-          actions: 'close-issues'
+          actions: "close-issues"
           token: ${{ secrets.GITHUB_TOKEN }}
-          labels: '🤔 Need Reproduce'
-          body: 'close issues'
-          comment-emojis: '+1'
-          issue-emojis: '+1'
+          labels: "🤔 Need Reproduce"
+          body: "close issues"
+          comment-emojis: "+1"
+          issue-emojis: "+1"

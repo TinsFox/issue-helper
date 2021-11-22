@@ -9,24 +9,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check-issue
-        uses: actions-cool/issues-helper@up
+        uses: actions/checkout@master
         id: checkid
         with:
-          actions: 'check-issue'
+          actions: "check-issue"
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
-          title-includes: '官网,网站,国内,镜像,mobile ant design,mobile.ant.design,ant design,ant.design,pro/挂了,无法访问,不能访问,访问不了,出问题,打不开,登不上,can not open,can not be reached'
+          title-includes: "官网,网站,国内,镜像,mobile ant design,mobile.ant.design,ant design,ant.design,pro/挂了,无法访问,不能访问,访问不了,出问题,打不开,登不上,can not open,can not be reached"
 
       - name: deal-website
         if: steps.checkid.outputs.check-result == 'true'
-        uses: actions-cool/issues-helper@up
+        uses: actions/checkout@master
         with:
-          actions: 'create-comment,close-issue'
+          actions: "create-comment,close-issue"
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           body: |
             Ant Design 系列官网由于某些众所周知的原因无法访问，建议翻墙或访问国内镜像站点。
-            
+
             ## 官网
 
             * Ant Design: https://ant.design

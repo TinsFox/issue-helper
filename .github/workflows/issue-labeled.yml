@@ -22,15 +22,34 @@ jobs:
             ![giphy](https://user-images.githubusercontent.com/507615/62342668-4735dc00-b51a-11e9-92a7-d46fbb1cc0c7.gif)
 
       - name: need repo
-        if: github.event.label.name == '🤔 Need Reproduce'
+        if: github.event.label.name == 'Need Reproduce'
         uses: actions-cool/issues-helper@v2
         with:
           actions: "create-comment"
           issue-number: ${{ github.event.issue.number }}
           body: |
-            Hello @${{ github.event.issue.user.login }}. Please provide a online reproduction by forking this link https://u.ant.design/codesandbox-repro or a minimal GitHub repository. Issues labeled by \`Need Reproduce\` will be closed if no activities in 7 days.
-            你好 @${{ github.event.issue.user.login }}, 我们需要你提供一个在线的重现实例以便于我们帮你排查问题。你可以通过点击 [此处](https://u.ant.design/codesandbox-repro) 创建一个 codesandbox 或者提供一个最小化的 GitHub 仓库。7 天内未跟进的 issue 将会被自动关闭。
+            Hello @${{ github.event.issue.user.login }}. Please provide a online reproduction by forking this link  [react template](https://codesandbox.io/s/react-vant-template-eez7b) [nextjs template](https://codesandbox.io/s/react-vant-nextjs-template-uepyw) or a minimal GitHub repository. Issues labeled by \`Need Reproduce\` will be closed if no activities in 7 days.
+            你好 @${{ github.event.issue.user.login }}, 我们需要你提供一个在线的重现实例以便于我们帮你排查问题。你可以通过点击  [react template](https://codesandbox.io/s/react-vant-template-eez7b) [nextjs template](https://codesandbox.io/s/react-vant-nextjs-template-uepyw) 创建一个 codesandbox 或者提供一个最小化的 GitHub 仓库。7 天内未跟进的 issue 将会被自动关闭。
             ![](https://gw.alipayobjects.com/zos/antfincdn/y9kwg7DVCd/reproduce.gif)
+
+      - name: bug
+        if: github.event.label.name == 'bug'
+        uses: actions-cool/issues-helper@v2
+        with:
+          actions: "create-comment"
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Hello @${{ github.event.issue.user.login }}. This is a bug, we will fix it as soon as possible.
+            你好 @${{ github.event.issue.user.login }}, 这已经确定是一个bug，我们会尽快修复它。
+
+      - name: processing
+        if: github.event.label.name == 'processing'
+        uses: actions-cool/issues-helper@v2
+        with:
+          actions: "create-comment"
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            该issues目前正在处理中，处理过程可能需要你提供更多的信息，感谢你的配合
 
       - name: remove labels
         if: github.event.label.name == 'remove-labels'

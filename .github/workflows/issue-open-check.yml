@@ -20,7 +20,7 @@ jobs:
       - if: steps.check.outputs.check-result == 'false' && github.event.issue.state == 'open'
         uses: actions-cool/issues-helper@v2.2.0
         with:
-          actions: "create-comment, close-issue"  # TODO 要不要关闭issues
+          actions: "create-comment, close-issue"  # 要不要关闭issues
           issue-number: ${{ github.event.issue.number }}
           body: |
             当前 Issue 未检测到标题，请规范填写，谢谢！

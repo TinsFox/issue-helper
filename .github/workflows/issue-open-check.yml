@@ -41,7 +41,6 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           assignees: "TinsFox"
           random-to: 1
-
           body: |
             我们会尽快处理issues，谢谢你的使用和反馈
 

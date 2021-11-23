@@ -13,7 +13,7 @@ jobs:
         with:
           actions: "check-issue"
           issue-number: ${{ github.event.issue.number }}
-          title-excludes: "🐛[BUG], 👑 [需求], 🧐[问题]"
+          title-excludes: "🐛[BUG], 👑 [需求], 🧐[问题]" # 标题等于这些东西的时候回关闭issues，评论issues
 
       - if: steps.check.outputs.check-result == 'false' && github.event.issue.state == 'open'
         uses: actions-cool/issues-helper@v2.2.0
@@ -32,3 +32,17 @@ jobs:
           title-excludes: "🐛[BUG], 👑 [需求], 🧐[问题]"
           comment-title: "### 以下的 Issues 可能会帮助到你 / The following issues may help you"
           show-footer: false
+
+      - if: steps.check.outputs.check-result == 'true' && github.event.issue.state == 'open'
+        uses: actions-cool/issues-helper@v2.2.0
+        with:
+          actions: "add-assignees create-comment"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.issue.number }}
+          assignees: "TinsFox"
+          random-to: 1
+
+          body: |
+            我们会尽快处理issues，谢谢你的使用和反馈
+
+            we will check this issues as soon as we can.

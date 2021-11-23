@@ -1,18 +1,18 @@
-name: Add Assigness
+# name: Add Assigness
 
-on:
-  issues:
-    types: [opened, edited]
+# on:
+#   issues:
+#     types: [opened, edited]
 
-jobs:
-  add-assigness:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Add assigness
-        uses: actions-cool/issues-helper@v2
-        with:
-          actions: "add-assignees"
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: ${{ github.event.issue.number }}
-          assignees: "TinsFox"
-          random-to: 1
+# jobs:
+#   add-assigness:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Add assigness
+#         uses: actions-cool/issues-helper@v2
+#         with:
+#           actions: "add-assignees"
+#           token: ${{ secrets.GITHUB_TOKEN }}
+#           issue-number: ${{ github.event.issue.number }}
+#           assignees: "TinsFox"
+#           random-to: 1

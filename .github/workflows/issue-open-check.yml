@@ -15,12 +15,12 @@ jobs:
         with:
           actions: "check-issue"
           issue-number: ${{ github.event.issue.number }}
-          title-excludes: *title-example # 标题等于这些东西的时候回关闭issues，评论issues
+          title-excludes: *title-example
 
       - if: steps.check.outputs.check-result == 'false' && github.event.issue.state == 'open'
         uses: actions-cool/issues-helper@v2.2.0
         with:
-          actions: "create-comment, close-issue"  # 要不要关闭issues
+          actions: "create-comment, close-issue"
           issue-number: ${{ github.event.issue.number }}
           body: |
             当前 Issue 未检测到标题，请规范填写，谢谢！

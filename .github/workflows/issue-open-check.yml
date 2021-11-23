@@ -3,9 +3,6 @@ name: Issue Open Check
 on:
   issues:
     types: [opened, edited]
-
-title-example: "🐛[BUG], 👑 [需求], 🧐[问题]"
-
 jobs:
   check-issue:
     runs-on: ubuntu-latest
@@ -15,7 +12,7 @@ jobs:
         with:
           actions: "check-issue"
           issue-number: ${{ github.event.issue.number }}
-          title-excludes: *title-example
+          title-excludes: "🐛[BUG], 👑 [需求], 🧐[问题]"
 
       - if: steps.check.outputs.check-result == 'false' && github.event.issue.state == 'open'
         uses: actions-cool/issues-helper@v2.2.0
@@ -31,7 +28,7 @@ jobs:
         uses: actions-cool/issues-similarity-analysis@v1.1.0
         with:
           filter-threshold: 0.6
-          title-excludes: *title-example
+          title-excludes: "🐛[BUG], 👑 [需求], 🧐[问题]"
           comment-title: "### 以下的 Issues 可能会帮助到你 / The following issues may help you"
           show-footer: false
 

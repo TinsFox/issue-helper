@@ -1,0 +1,20 @@
+# 当一个 issue 新建时，对首次新建 issue 的用户进行欢迎。若用户非首次新建，则无操作。
+name: Issue Welcome
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  issue-welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: welcome
+        uses: actions-cool/issues-helper@v2
+        with:
+          actions: "welcome"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: hi @${{ github.event.issue.user.login }}, welcome! 测试首次进入仓库创建issues
+          labels: "welcome1, welcome2"
+          assignees: "xx1"
+          issue-contents: "+1, -1, eyes"

@@ -1,13 +1,13 @@
 name: ❓︎ Q&A
 description: Ask the community for help.
-title: "🐛 [Question]: "
+title: "❓︎ [Q&A]: "
 labels:
   - bug
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for contributing!
+        Thank you for using React Vant!
 
         Do you need some help?
         ======================

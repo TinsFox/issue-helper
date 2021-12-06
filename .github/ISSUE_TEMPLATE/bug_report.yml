@@ -1,5 +1,5 @@
 name: 🐛 Bug Report
-description: Something is wrong with Remix.
+description: Something is wrong with React Vant.
 title: "[Bug]: "
 labels:
   - bug
@@ -15,39 +15,31 @@ body:
         support or usage questions. Questions here don't have as much visibility as they do elsewhere. Before
         you ask a question, here are some resources to get help first:
 
-        - Read the docs: https://remix.run/docs
-        - Explore examples: https://github.com/remix-run/remix/tree/dev/examples
-        - Look for/ask questions on Stack Overflow: https://stackoverflow.com/questions/ask?tags=remix
-        - Ask in GitHub Discussions: https://github.com/remix-run/remix/discussions
-        - Ask in chat: https://rmx.as/discord
+        - Read the docs: https://3lang3.github.io/react-vant/#/zh-CN/home
+        - Explore examples: https://3lang3.github.io/react-vant/mobile.html
+        - Ask in GitHub Discussions: https://github.com/3lang3/react-vant/discussions
+        - Ask in WeChat: https://user-images.githubusercontent.com/7098719/143408499-6e838945-9fc3-4b4d-bf8f-f262f4937c33.jpg
+        - Ask in WeChat: ![image](https://user-images.githubusercontent.com/7098719/143408499-6e838945-9fc3-4b4d-bf8f-f262f4937c33.jpg)
 
         ### Test Case Starter:
-        https://stackblitz.com/github/remix-run/remix/tree/dev/examples/basic?file=app/root.tsx
+        - [react template](https://codesandbox.io/s/react-vant-template-eez7b)
+        - [nextjs template](https://codesandbox.io/s/react-vant-nextjs-template-uepyw)
   - type: checkboxes
     id: packages
     attributes:
-      label: Which Remix packages are impacted?
+      label: Which React Vant packages are impacted?
       options:
-        - label: "`remix` (Remix core)"
-        - label: "`create-remix`"
-        - label: "`@remix-run/architect`"
-        - label: "`@remix-run/cloudflare-workers`"
-        - label: "`@remix-run/dev`"
-        - label: "`@remix-run/express`"
-        - label: "`@remix-run/netlify`"
-        - label: "`@remix-run/node`"
-        - label: "`@remix-run/react`"
-        - label: "`@remix-run/serve`"
-        - label: "`@remix-run/server-runtime`"
-        - label: "`@remix-run/vercel`"
+        - label: "`react-vant` (React Vant core)"
+        - label: "`@react-vant/cli`"
+        - label: "`create-react-vant-cli-app`"
   - type: input
     attributes:
-      label: What version of Remix are you using?
+      label: What version of React Vant are you using?
     validations:
       required: true
   - type: input
     attributes:
-      label: What version of Node are you using? Minimum supported version is 14.
+      label: What version of Node are you using? Minimum supported version is 12.
     validations:
       required: true
   - type: textarea

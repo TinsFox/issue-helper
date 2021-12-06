@@ -25,6 +25,14 @@ body:
         ### Test Case Starter:
         - [react template](https://codesandbox.io/s/react-vant-template-eez7b)
         - [nextjs template](https://codesandbox.io/s/react-vant-nextjs-template-uepyw)
+
+        ### Code Example:
+
+        - [Create React App](https://github.com/3lang3/react-vant-template/tree/main/template/create-react-app)
+        - [Umi](https://github.com/3lang3/react-vant-template/tree/main/template/umi)
+        - [Next.js](https://github.com/3lang3/react-vant-template/tree/main/template/nextjs)
+        - [Vite](https://github.com/3lang3/react-vant-template/tree/main/template/vite)
+
   - type: checkboxes
     id: packages
     attributes:

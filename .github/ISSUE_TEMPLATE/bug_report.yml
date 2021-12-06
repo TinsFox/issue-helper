@@ -1,6 +1,6 @@
 name: 🐛 Bug Report
 description: Something is wrong with React Vant.
-title: "[Bug]: "
+title: "🐛 [Bug]: "
 labels:
   - bug
 body:
@@ -69,3 +69,10 @@ body:
       description: A concise description of what you're experiencing.
     validations:
       required: true
+  - type: textarea
+      attributes:
+        label: Context
+        description: A concise description of what you're experiencing.
+  - type: markdown
+    attributes:
+      value: "Thanks for completing our form!"

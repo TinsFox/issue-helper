@@ -70,9 +70,9 @@ body:
     validations:
       required: true
   - type: textarea
-      attributes: 
-        label: Context
-        description: A concise description of what you're experiencing.
+    attributes:
+      label: Context
+      description: In what environment are you using React Vant?
   - type: markdown
     attributes: 
       value: "Thanks for completing our form!"

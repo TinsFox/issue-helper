@@ -70,9 +70,9 @@ body:
     validations:
       required: true
   - type: textarea
-      attributes:
+      attributes: 
         label: Context
         description: A concise description of what you're experiencing.
   - type: markdown
-    attributes:
+    attributes: 
       value: "Thanks for completing our form!"

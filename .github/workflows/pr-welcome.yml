@@ -1,0 +1,23 @@
+name: PR Welcome
+
+on:
+  pull_request_target:
+    types: [opened, edited, reopened]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-cool/pr-welcome@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          refuse-issue-label: "xxx"
+          need-creator-authority: "write"
+          comment: |
+            HI ~
+
+            你好~
+          emoji: "+1, -1, heart"
+          reviewers: "TinsFox"
+          review-creator: false
+          close: true
